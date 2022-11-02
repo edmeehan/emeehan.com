@@ -77,7 +77,7 @@
       width: 1.5rem;
       height: 1.5rem;
       display: block;
-      fill: var(--color-3);
+      fill: var(--text-color);
     }
     .list-nav {
       list-style: none;
@@ -85,14 +85,19 @@
       padding: 0;
     }
     .list-nav li {
-      background: rgba(0,0,0,.1);
-      border-radius: 4px;
       margin-bottom: .5em;
-      padding: .6em .7em;
     }
     .list-nav a {
       text-decoration: none;
       color: inherit;
+      padding: .6em .7em;
+      display: block;
+      background: rgba(0,0,0,.1);
+      border-radius: 4px;
+      transition: background 600ms;
+    }
+    .list-nav a:hover {
+      background: rgba(0,0,0,.25);
     }
   </style>
 </head>
