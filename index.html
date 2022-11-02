@@ -4,10 +4,132 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Welcome</title>
+  <title>Ed Meehan | Links</title>
+  <style>
+    :root {
+      --color-1: rgba(181,104,94,1);
+      --color-2: rgba(233,176,151,1);
+      --color-3: rgba(188,164,154,1);
+      --color-4: rgba(78,83,87,1);
+      --text-color: #e3e2ff;
+    }
+    body,html {
+      min-height: 100vh;
+      font-size: 20px;
+      font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    }
+    body {
+      background: var(--color-1);
+      background: linear-gradient(0deg, var(--color-1) 0%, var(--color-2) 28%, var(--color-3) 55%, var(--color-4) 100%);
+      margin: 0;
+      color: var(--text-color);
+    }
+    header {
+      text-align: center;
+      padding: 1px;
+      font-family: 'Times New Roman', Times, serif;
+    }
+    header h1 {
+      font-size: 3em;
+      line-height: 1em;
+      background: -webkit-linear-gradient(var(--color-1), var(--color-2));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      font-weight: 100;
+      letter-spacing: -1px;
+    }
+    main {
+      flex: 1 0 auto;
+      max-width: 500px;
+      width: 100%;
+      margin: 0 auto;
+      padding: 2.5em 1em;
+      box-sizing: border-box;
+    }
+    footer {
+      text-align: center;
+      padding: 1em;
+      font-weight: 100;
+    }
+    small {
+      font-size: 12px;
+    }
+    .wrapper {
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh;
+    }
+    .icon-nav {
+      list-style: none;
+      display: flex;
+      padding: 0;
+      align-items: center;
+      justify-content: center;
+    }
+    .icon-nav li {
+      margin: 0 .5em;
+    }
+    .icon-nav a {
+      display: block;
+    }
+    .icon-nav svg {
+      width: 1.5rem;
+      height: 1.5rem;
+      display: block;
+      fill: var(--color-3);
+    }
+    .list-nav {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+    }
+    .list-nav li {
+      background: rgba(0,0,0,.1);
+      border-radius: 4px;
+      margin-bottom: .5em;
+      padding: .6em .7em;
+    }
+    .list-nav a {
+      text-decoration: none;
+      color: inherit;
+    }
+  </style>
 </head>
 <body>
-  <h1>Placeholder</h1>
-  <p>Site comign soon.</p>
+  <div class="wrapper">
+    <header>
+      <h1>Ed Meehan</h1>
+      <nav>
+        <ul class="icon-nav">
+          <li>
+            <a title="Visit my LinkedIn profile" href="https://www.linkedin.com/in/edwardmeehan/">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 32H31.9C14.3 32 0 46.5 0 64.3v383.4C0 465.5 14.3 480 31.9 480H416c17.6 0 32-14.5 32-32.3V64.3c0-17.8-14.4-32.3-32-32.3zM135.4 416H69V202.2h66.5V416zm-33.2-243c-21.3 0-38.5-17.3-38.5-38.5S80.9 96 102.2 96c21.2 0 38.5 17.3 38.5 38.5 0 21.3-17.2 38.5-38.5 38.5zm282.1 243h-66.4V312c0-24.8-.5-56.7-34.5-56.7-34.6 0-39.9 27-39.9 54.9V416h-66.4V202.2h63.7v29.2h.9c8.9-16.8 30.6-34.5 62.9-34.5 67.2 0 79.7 44.3 79.7 101.9V416z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a title="Visit my Instagram profile" href="https://www.instagram.com/edmeehan/">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M224,202.66A53.34,53.34,0,1,0,277.36,256,53.38,53.38,0,0,0,224,202.66Zm124.71-41a54,54,0,0,0-30.41-30.41c-21-8.29-71-6.43-94.3-6.43s-73.25-1.93-94.31,6.43a54,54,0,0,0-30.41,30.41c-8.28,21-6.43,71.05-6.43,94.33S91,329.26,99.32,350.33a54,54,0,0,0,30.41,30.41c21,8.29,71,6.43,94.31,6.43s73.24,1.93,94.3-6.43a54,54,0,0,0,30.41-30.41c8.35-21,6.43-71.05,6.43-94.33S357.1,182.74,348.75,161.67ZM224,338a82,82,0,1,1,82-82A81.9,81.9,0,0,1,224,338Zm85.38-148.3a19.14,19.14,0,1,1,19.13-19.14A19.1,19.1,0,0,1,309.42,189.74ZM400,32H48A48,48,0,0,0,0,80V432a48,48,0,0,0,48,48H400a48,48,0,0,0,48-48V80A48,48,0,0,0,400,32ZM382.88,322c-1.29,25.63-7.14,48.34-25.85,67s-41.4,24.63-67,25.85c-26.41,1.49-105.59,1.49-132,0-25.63-1.29-48.26-7.15-67-25.85s-24.63-41.42-25.85-67c-1.49-26.42-1.49-105.61,0-132,1.29-25.63,7.07-48.34,25.85-67s41.47-24.56,67-25.78c26.41-1.49,105.59-1.49,132,0,25.63,1.29,48.33,7.15,67,25.85s24.63,41.42,25.85,67.05C384.37,216.44,384.37,295.56,382.88,322Z"/></svg>
+            </a>
+          </li>
+          <li>
+            <a title="Send me an email" href="mailto:hello@edmeehan.dev">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M64 32C28.7 32 0 60.7 0 96V416c0 35.3 28.7 64 64 64H384c35.3 0 64-28.7 64-64V96c0-35.3-28.7-64-64-64H64zM218 271.7L64.2 172.4C66 156.4 79.5 144 96 144H352c16.5 0 30 12.4 31.8 28.4L230 271.7c-1.8 1.2-3.9 1.8-6 1.8s-4.2-.6-6-1.8zm29.4 26.9L384 210.4V336c0 17.7-14.3 32-32 32H96c-17.7 0-32-14.3-32-32V210.4l136.6 88.2c7 4.5 15.1 6.9 23.4 6.9s16.4-2.4 23.4-6.9z"/></svg>
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <nav>
+        <ul class="list-nav">
+          <li><a title="Visit the freelance website of Ed Meehan" href="https://edmeehan.dev/">Freelance Website</a></li>
+          <li><a title="Visit the personal blog of Ed Meehan" href="https://edwardmeehan.com/">Personal Blog</a></li>
+        </ul>
+      </nav>
+    </main>
+    <footer>
+      <small>Designed and built by me!</small>
+    </footer>
+  </div>
 </body>
 </html>
