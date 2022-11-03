@@ -1,0 +1,119 @@
+<html>
+    <head>
+        <script>
+            let circles;
+            let animationFrame;
+            let playState;
+            const circlesCount = 12;
+            const colors = [
+                '#455622',
+                '#12ac45',
+                '#fecf45',
+                '#443ab3',
+                '#222233'
+            ]
+            
+            class Circle {
+                x;
+                y;
+                dx;
+                dy;
+                radius;
+                style;
+                
+                constructor(
+                    x = 200,
+                    y = 200,
+                    dx = 3,
+                    dy = 3,
+                    radius = 30,
+                    style = 'rgb(255,100,0)'
+                ) {
+                    this.x = x;
+                    this.y = y;
+                    this.dx = dx;
+                    this.dy = dy;
+                    this.radius = radius;
+                    this.style = style;
+                }
+            
+                draw() {
+                    ctx.beginPath();
+                    ctx.arc(this.x,this.y,this.radius,0,Math.PI * 2,false);
+                    ctx.strokeStyle = this.style;
+                    ctx.stroke();
+                }
+            
+                update() {
+                    if (this.x + this.radius > window.innerWidth || this.x - this.radius < 0) this.dx = -this.dx;
+                    if (this.y + this.radius > window.innerHeight || this.y - this.radius < 0) this.dy = -this.dy;
+                    this.x += this.dx;
+                    this.y += this.dy;
+                    this.draw();
+                }
+            }
+
+            const init = () => {
+                const canvas = document.getElementById("canvas");
+                
+                if (canvas.getContext) {
+                    window.ctx = canvas.getContext("2d");
+                    canvas.width  = canvas.offsetWidth;
+                    canvas.height = canvas.offsetHeight;
+                }
+
+                circles = Array(circlesCount).fill(null).map(() => factory());
+            
+                document.getElementById("canvas").addEventListener('click', (e) => {
+                    if (playState) {
+                        endFrame();
+                    } else {
+                        gotoFrame();
+                    }
+                })
+
+                window.addEventListener('resize', () => {
+                    canvas.width  = canvas.offsetWidth;
+                    canvas.height = canvas.offsetHeight;
+                })
+            
+                gotoFrame();
+            }
+
+            const gotoFrame = () => {
+                animationFrame = window.requestAnimationFrame(gotoFrame);
+                ctx.clearRect(0,0,window.innerWidth,window.innerHeight);
+                circles.map((circle) => circle.update());
+                playState = true;
+            }
+            
+            const endFrame = () => {
+                window.cancelAnimationFrame(animationFrame);
+                playState = false;
+            }
+            
+            const factory = () => {
+                const radius = 30,
+                    x = Math.random() * (window.innerWidth - radius * 2) + radius,
+                    y = Math.random() * (window.innerHeight - radius * 2) + radius,
+                    dx = (Math.random() * .5) * 5,
+                    dy = (Math.random() * .5) * 5,
+                    colorIndex = Math.floor(Math.random() * colors.length);
+                return new Circle(x,y,dx,dy,radius,colors[colorIndex]);
+            }
+        </script>
+        <style>
+            canvas {
+                width: 100%;
+                height: 100%;
+                border: 1px solid #ccc;
+            }
+            body {
+                margin:0;
+            }
+        </style>
+    </head>
+    <body onload="init();">
+        <canvas id="canvas" width="150" height="150"></canvas>
+    </body>
+</html>
